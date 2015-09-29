@@ -1,0 +1,13 @@
+<div class="cart-count">
+	<a href="<?= $this->getCheckoutUrl() ?>">
+	    <span class="bags">
+			<span class="red-txt">
+				<?= ($this->getSummaryCount() == null) ? '0' : $this->getSummaryCount() ?>
+				</span> 
+				Article<?= (($this->getSummaryCount() == null) ? '' : 's') ?>
+				<span class="red-txt">
+					<?= $this->getSubtotal() ?> €
+				</span>
+		</span>
+    </a>
+</div>

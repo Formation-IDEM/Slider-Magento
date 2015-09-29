@@ -1,0 +1,12 @@
+<?php if(count($this->getStores())>1): ?>
+<div class="store-lang">
+    <div class="language-switcher">
+    <?php foreach ($this->getStores() as $_lang): ?>
+
+        <a href="<?php echo $this->getCurrentUrl() . '?___store=' . $_lang->getCode();?>">
+        	<img src="<?php echo $this->getSkinUrl('images/flags/' . $_lang->getCode() . '.jpg');?>" alt="">
+        </a>
+    <?php endforeach;?>
+    </div>
+</div>
+<?php endif;?>

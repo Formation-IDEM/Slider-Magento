@@ -1,0 +1,86 @@
+<?php
+if($this->getSlides())
+{
+	?>
+		<ul class="bxslider">
+	<?php
+	foreach($this->getSlides() as $slide)
+	{
+		if($slide->getSelectedProducts())
+		{
+			$count = count($slide->getSelectedProducts());
+			$i = 0;
+			if($count < 5) // Pour les colonnnes en bootstrap maximum 4 produits
+			{
+				$col = 12 / $count;
+			}
+			else
+			{
+				$col = 3;
+			}
+
+			?><li><?php
+			foreach($slide->getSelectedProducts() as $product)
+			{
+				if($i > 3)
+				{
+					break;
+				}
+				$product = Mage::getModel('catalog/product')->load($product->getId());
+				?>
+					<a href="<?= $product->getProductUrl() ;?>">
+						<div class="col-md-<?= $col ?> bordered">
+							<img src="<?= $product->getImageUrl(); ?>">
+							<span class="name"><?= $product->getName(); ?></span>
+							<span class="price"><?= $product->getPrice(); ?> €</span>
+						</div>
+					</a>
+				<?php
+				$i++;
+			}
+			?></li><?php
+		}
+		else
+		{
+			?>
+	  			<li>
+		  			<?php
+		  			if($slide->getProductId() != 0)
+		  			{
+		  				$product = Mage::getModel('catalog/product')->load($this->getProductId());
+		  				?><a href="<?= $product->getUrl() ?>"><?php
+		  			}
+		  			elseif($slide->getUrl() != null)
+	  				{
+		  				?><a href="<?= $slide->getUrl() ?>"><?php
+		  			}
+		  			?>
+	  				<img src="/media/<?= $slide->getImage() ?>" />
+	  				<?php 
+	  				if($slide->getProductId() || $this->getUrl())
+	  				{
+	  					?>
+	  						</a>
+	  					<?php
+	  				}
+	  				?>
+	  			</li>
+	  		<?php
+	  	}
+	}
+	?>
+	</ul>
+	<script>
+	jQuery(document).ready(function(){
+	  jQuery('.bxslider').bxSlider({
+	  	pager: false,
+	  	adaptiveHeight: false,
+	  	auto: true,
+	  	<?= (Mage::getStoreConfig('slider_section/slider_group/slider_speed',Mage::app()->getStore())) ? 'speed: '.Mage::getStoreConfig('slider_section/slider_group/slider_speed',Mage::app()->getStore()).',' : ''  ?>
+	  	<?= (Mage::getStoreConfig('slider_section/slider_group/slider_duration',Mage::app()->getStore())) ? 'pause: '.Mage::getStoreConfig('slider_section/slider_group/slider_duration',Mage::app()->getStore()) : ''  ?>
+	  });
+	});
+	</script>
+	<?php
+}
+?>

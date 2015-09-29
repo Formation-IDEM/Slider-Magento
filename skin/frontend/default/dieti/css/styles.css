@@ -1,0 +1,292 @@
+body
+{
+	background-color:#f5f5f5 !important;
+	font-family:'Airal';
+}
+
+.top-menu
+{
+	background-color:#5f525f;
+	height:50px;
+}
+
+.top-menu ul li
+{
+	position:relative;	
+}
+
+.top-menu ul li a
+{
+	color:#bfb5bf;
+	text-transform:uppercase;
+	font-size:12px;
+}
+
+.top-menu ul li::after
+{
+	position:absolute;
+	top:0;
+	right:100%;
+	width:50px;
+	height:50px;
+	background-image:url('../images/picto-top-link.png') no-repeat 0px 0px;
+}
+
+.middle-menu
+{
+	background-color:#edebec;
+}
+
+.middle-menu .table
+{
+	display:table;
+	width:100%;
+	border-color:#9a2967;
+	border-width:0px 0px 8px 0px;
+	border-style:solid;
+}
+
+.middle-menu ul
+{
+	display:table;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+.middle-menu ul:before,
+.middle-menu ul:after
+{
+	content:none;
+	box-sizing: border-box;
+}
+
+.middle-menu ul li
+{
+	border-right:1px solid #8a4c7c;
+	display:table-cell;
+	float:none;
+	background-color:#6d1f5b;
+}
+
+.middle-menu ul li:last-child
+{
+	border-color:transparent;
+}
+
+.middle-menu ul li a
+{
+	font-size:16px;
+	font-family:'Arial';
+	text-align:center;
+	padding:30px 0px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.middle-menu ul li a:hover
+{
+	background-color:#9a2967;
+}
+
+.middle-menu .navbar
+{
+	margin:10px 0px 0px;
+	border-radius:0px;
+}
+
+.main-container:before,
+.main-container > .row:before
+{
+	content:none !important;
+	box-sizing: border-box;
+}
+
+.main-container > .row
+{
+	  margin-top: -1px;
+}
+
+.sub-content
+{
+	margin-top:20px;
+}
+
+.sub-content img
+{
+	overflow: hidden;
+	height:100%;
+	border-width:0px 0px 8px 0px;
+	border-style:solid;
+}
+
+.sub-content img.national-program
+{
+	border-color:#829b2f;
+}
+
+.sub-content img.what-your-body
+{
+	border-color:#f27e00;
+}
+
+.sub-content .row .row
+{
+	height:213px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.sub-content .row .row.first
+{
+	margin-right:0px;
+}
+
+.sub-content .row .row.last
+{
+	margin-left:0px;
+}
+
+.footer-container
+{
+	background-color:#5f525f;
+	color:#fff;
+	height:70px;
+	line-height:70px;
+	font-size:18px;
+}
+
+.footer-container address
+{
+	line-height: 70px;
+	margin:0;
+}
+
+.up-footer
+{
+	height:250px;
+	background-color:#d9d4d9;
+	color:#5f525f;
+}
+
+.up-footer ul
+{
+	padding:0;
+	line-height:30px;
+	font-size:18px;
+	text-transform:uppercase;
+}
+
+.up-footer ul span
+{
+	font-weight:bold;
+}
+
+.up-footer ul li
+{
+	line-height:inherit;
+	text-transform:none;
+	font-size:15px;
+	list-style:none;
+}
+
+.up-footer ul,
+.up-footer ul li a
+{
+	color:#5f525f;
+}
+
+.container .title
+{
+	margin:20px 0px;
+	background-color:#6d1f5b;
+	padding:15px 20px;
+	color:#fff;
+	font-size:18px;
+	text-transform:uppercase;
+}
+
+.container .products
+{
+	margin:20px 0px;
+}
+
+.container .tabs
+{
+	margin-top:10px;
+}
+
+.container .tab
+{
+	clear:both;
+}
+
+.container .tab .product
+{
+	border:1px solid #ccc;
+	background-color:#fff;
+	margin:5px;
+	padding:10px;
+}
+
+.container .tab .product.c-12
+{
+	margin-right:-15px;
+}
+
+.container .tab .product.i-0
+{
+	margin-left:-15px;
+}
+
+.container .tab .product img
+{
+	width:100%;
+}
+
+.container .tab .product .name
+{
+	margin:10px 0px;
+	color:#444;
+}
+
+.container .tab .product .price
+{
+	color:#a02a70;
+	font-size:24px;
+}
+
+.container .tab .product .add-to-cart
+{
+	margin:10px 0px;
+}
+
+.container .tab .product .add-to-cart > span
+{
+	padding:10px 10px 7px;
+	border:2px solid #666;
+	border-radius:50px;
+	font-size:18px;
+	margin-right:10px;
+	color:#666;
+	text-transform:uppercase;
+	vertical-align:middle;
+	line-height:14px;
+}
+
+.container .tab .product .add-to-cart span span
+{
+	font-size:14px;
+	line-height:14px;
+}
+
+/* BX Slider */
+
+.bx-wrapper .bx-viewport 
+{
+	box-shadow: 0 0 0 transparent !important;
+	-moz-box-shadow: 0 0 0 transparent !important;
+ 	-webkit-box-shadow: 0 0 0 transparent !important;
+ 	border:0px solid transparent !important;
+ 	left:auto !important;
+}

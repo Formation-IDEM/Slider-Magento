@@ -1,0 +1,31 @@
+<?php
+if($this->getTestimonials())
+{
+	?>
+	<table class="table table-striped">
+		<tr>
+			<th>Titre</th>
+			<th>Contenu</th>
+			<th>Date</th>
+			<th>Voir</th>
+		</tr>
+		<?php
+		foreach($this->getTestimonials() as $testimonial)
+		{
+			?>
+			<tr>
+				<td><?= $testimonial->getTitle() ?></td>
+				<td><?= $testimonial->getContent() ?></td>
+				<td><?= $testimonial->getCreatedTime() ?></td>
+				<td>
+					<a href="/testimonial/index/show/?id=<?= $testimonial->getId() ?>" class="btn btn-primary">Voir</a>
+				</td>
+			</tr>
+			<?php
+		}
+		?>
+	</table>
+	<?php
+}
+?>
+<a href="/testimonial/form" class="btn btn-primary">Ajouter un témoignage</a>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Idem_Test>
+			<version>1.0.0</version>
+		</Idem_Test>
+	</modules>
+	<frontend>
+		<routers>
+			<test>
+				<use>standard</use>
+				<args>
+					<module>Idem_Test</module>
+					<frontName>test</frontName>
+				</args>
+			</test>
+		</routers>
+		<layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+	</frontend>
+	<global>
+		<blocks>
+			<test>
+				<class>Idem_Test_Block</class>
+			</test>
+			<!-- <checkout>
+				<rewrite>
+					<links>Idem_Test_Block_Links</links>
+				</rewrite>
+			</checkout> -->
+		</blocks>
+		<helpers>
+			<test>
+				<class>Idem_Test_Helper</class>
+			</test>
+		</helpers>
+	</global>
+</config>

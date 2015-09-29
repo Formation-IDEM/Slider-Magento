@@ -1,0 +1,76 @@
+<?php
+if($this->getProducts())
+{
+    foreach($this->getProducts() as $product)
+    {
+        echo $product->getName().'<br>';
+        //$rating = Mage::getModel('rating/rating')->getEntitySummary($product->getId());
+        $reviews = Mage::getModel('review/review')
+                        ->getResourceCollection()
+                        ->addEntityFilter('product', $product->getId())
+                        ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
+                        ->setDateOrder();
+        echo 'Commentaires sur l\'article '.$product->getName().'<br>';
+        foreach($reviews as $review)
+        {
+            echo $review->getNickname().' : <b>'.$review->getTitle().'</b> - '.$review->getDetail().' <br>';
+        }
+    }
+}
+// echo $this->getCategoryId();
+// // Si on est sur une page catégorie
+// if($currentcategory = Mage::registry('current_category'))
+// {
+//     if($categoryProducts = $currentcategory->getProductCollection()->addAttributeToFilter('visibility', 4))
+//     {
+//         foreach($categoryProducts as $product)
+//         {
+//             $product = Mage::getModel('catalog/Product')->load($product->getId());
+//             echo '- <a href="'.$product->getProductUrl().'">'.$product->getName().'</a><br>';
+//         }
+//     }
+// }
+// else // Si on est pas sur une page catégorie (ex : page accueil)
+// {
+//     $helper = Mage::helper('catalog/category'); // On charge le helper de category
+//     foreach($helper->getStoreCategories() as $category)
+//     {
+//         if($category->getIsActive())
+//         {
+//          $category = Mage::getModel('catalog/Category')->load($category->getId());
+//          echo '<b><a href="'.$category->getUrl().'">'.$category->getName().' ('.$category->getProductCount().')</a></b><br>';
+//          $categoryProducts = $category->getProductCollection()->addAttributeToFilter('visibility', 4);
+//          if($category->hasChildren())
+//          {
+//              foreach($category->getChildrenCategories() as $subcategory)
+//              {
+//                  if($subcategory->getIsActive())
+//                  {
+//                      $subcategory = Mage::getModel('catalog/Category')->load($subcategory->getId());
+//                      echo '-- <b><a href="'.$subcategory->getUrl().'">'.$subcategory->getName().' ('.$subcategory->getProductCount().')</a></b><br>';
+//                  }
+//              }
+//          }
+//          if($categoryProducts)
+//          {
+//              foreach($categoryProducts as $product)
+//              {
+//                  $product = Mage::getModel('catalog/Product')->load($product->getId());
+//                  echo '- <a href="'.$product->getProductUrl().'">'.$product->getName().'</a><br>';
+//              }
+//          }
+//         }
+//         echo '<br><br>';
+//     }    
+// }
+//echo $this->getProducts();
+?>
+<script>
+// $('#category_select').change(function(){
+// 	url = $(this).find('option:selected').attr('data-url');
+// 	if(url != 'undefined')
+// 	{
+// 		window.location.replace(url);
+// 	}
+// });
+</script>

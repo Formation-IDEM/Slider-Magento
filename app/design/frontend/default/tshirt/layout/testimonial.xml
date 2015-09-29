@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="top.links">
+            <block type="testimonial/links" name="new_link">
+                <action method="addTestimonialLink"></action>
+            </block>
+        </reference>
+	</default>
+	<testimonial_index_index>
+		<reference name="content">
+			<block type="testimonial/main" name="testimonial_block" before="-" template="testimonial/list.phtml" />
+		</reference>
+	</testimonial_index_index>
+	<testimonial_form_index>
+		<reference name="content">
+			<block type="testimonial/main" name="testimonial_block" before="-" template="testimonial/add.phtml" />
+		</reference>
+	</testimonial_form_index>
+	<testimonial_index_show>
+		<reference name="content">
+			<block type="testimonial/main" name="testimonial_block" before="-" template="testimonial/show.phtml" />
+		</reference>
+	</testimonial_index_show>
+</layout>

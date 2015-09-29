@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addCss">
+				<stylesheet>css/bootstrap.min.css</stylesheet>
+			</action>
+			<action method="addCss">
+				<stylesheet>css/font-awesome.min.css</stylesheet>
+			</action>
+			<action method="addItem" before="-">
+				<type>skin_js</type> 
+				<name>js/jquery-2.1.4.min.js</name>
+			</action>
+			<action method="addItem" before="-">
+				<type>skin_js</type> 
+				<name>js/bootstrap.min.js</name>
+			</action>
+		</reference>
+		<reference name="header">
+        	<block type="checkout/cart_sidebar" name="cart" after="top.menu" template="custom/cart.phtml" />
+		</reference>
+		<reference name="footer">
+        	<block type="core/template" name="custom_footer" as="custom_footer" before="-" template="custom/footer.phtml" />
+		</reference>
+		<reference name="footer_links">
+            <action method="addLink" translate="label title" module="catalog" ifconfig="catalog/seo/site_map">
+            	<label>Site Map</label>
+            	<url helper="catalog/map/getCategoryUrl" />
+            	<title>Site Map</title>
+            </action>
+        </reference>
+	</default>
+	<cms_index_index>
+		<reference name="head">
+			<action method="addCss">
+				<stylesheet>css/jquery.bxslider.min.css</stylesheet>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type> 
+				<name>js/jquery.bxslider.min.js</name>
+			</action>
+		</reference>
+		<reference name="content">
+			<remove name="cms.wrapper" />
+			<block type="slider/slider" name="slider" template="slider/view.phtml" />
+			<block type="core/template" name="sub-content" template="custom/sub-content.phtml" />
+			<block type="catalog/navigation" name="focus-categories" template="custom/focus-categories.phtml" after="slider">
+			</block>
+			<block type="cms/block" name="regime_block" after="sub-content">
+				<action method="setBlockId">
+					<block_id>regime</block_id>
+				</action>
+			</block>
+		</reference>
+	</cms_index_index>
+</layout>

@@ -1,0 +1,32 @@
+<div class="container-fluid top-menu">
+	<div class="container">
+		<div class="menu">
+			<?php echo $this->getChildHtml('topLinks') ?>
+		</div>
+	</div>
+</div>
+<div class="container-fluid middle-menu">
+	<div class="container">
+	        <p class="welcome-msg">
+	        	<?php //echo $this->getChildHtml('welcome') ?>
+	        	<?php echo $this->getAdditionalHtml() ?>
+	        </p>
+			<div class="row">
+		    	<div class="logo col-md-6">
+		    	 	<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+			    	 	<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+			    	 </a>
+			 	</div>
+			 	<div class="col-md-6 pull-right text-right">
+	    			<?php echo $this->getChildHtml('topSearch') ?>
+       				<?php echo $this->getChildHtml('cart'); ?>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	        	<?php echo $this->getChildHtml('topContainer'); ?>
+	        </div>
+	        <div class="row">
+    			<?php echo $this->getChildHtml('topMenu') ?>
+    		</div>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+<div class="title">
+	<span>Protéines en vedette</span>
+</div>
+<div class="products">
+	<?php
+	$categories = $this->getStoreCategories();
+	$i = 0;
+	?>
+	<ul class="nav nav-pills">
+		<?php
+			foreach($categories as $category)
+			{
+				$categories_tree[] = $category;
+				?>
+					<li role="presentation" <?= (($i == 0) ? 'class="active"' : '') ?>>
+						<a>
+							<?= $category->getName() ?>
+						</a>
+					</li>
+				<?php
+				$i++;
+				if($i > 2)
+				{
+					break;
+				}
+			}
+		?>
+	</ul>
+	<div class="tabs">
+		<?php
+			foreach($categories_tree as $category)
+			{
+				?>
+					<div class="tab">
+						<?php
+							$category = Mage::getModel('catalog/category')->load($category->getId());
+							$count = count($category->getProductCollection());
+							$i = 0;
+							$current = 0;
+							if($count < 5) // Pour les colonnnes en bootstrap maximum 4 produits
+							{
+								$col = 12 / $count;
+							}
+							else
+							{
+								$col = 3;
+							}
+							foreach($category->getProductCollection() as $product)
+							{
+								if($i > 3)
+								{
+									break;
+								}
+								$current = $current + $col;
+								$product = Mage::getModel('catalog/product')->load($product->getId());
+								?>
+									<div class="col-md-<?= $col ?>">
+										<div class="row product i-<?= $i ?> c-<?= $current ?>">
+<!-- 										<a href="<?= $product->getProductUrl() ;?>">
+ -->										<img src="<?= $product->getImageUrl(); ?>">
+											<div class="name"><?= $product->getName(); ?></div>
+											<div class="price"><?= $product->getPrice(); ?> €</div>
+											<div class="add-to-cart">
+												<span><i class="fa fa-heart"></i></span>
+												<span>
+													<span>Ajouter</span>
+													<i class="fa fa-shopping-cart"></i>
+												</span>
+											</div>
+<!-- 										</a>
+ -->									</div>
+									</div>
+								<?php
+								$i++;
+							}
+						?>
+					</div>
+				<?php
+			}
+		?>
+	</div>
+</div>

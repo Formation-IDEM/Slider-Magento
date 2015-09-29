@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="header">
+			<block type="page/switch" name="store_language" template="page/switch/languages.phtml" before="-" />
+        </reference>
+        <reference name="header">
+        	<block type="checkout/cart_sidebar" name="cart" after="top.menu" template="test/cart.phtml" />
+        </reference>
+		<reference name="top.links">
+            <block type="test/links" name="new_link">
+                <action method="addTestLink"></action>
+            </block>
+        </reference>
+	</default>
+	<test_index_index>
+		<reference name="content">
+			<block type="test/test" name="test_block" before="-" template="test/products.phtml">
+				<action method="setCategoryId"><id>3</id></action>
+			</block>
+		</reference>
+	</test_index_index>
+</layout>

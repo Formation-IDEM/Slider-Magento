@@ -1,0 +1,39 @@
+<footer class="footer-container case">
+    <div class="footer container">
+    	<section class="row-fluid">
+    		<div class="span3">
+    			<div class="footer-connect">
+        			<?php echo $this->getChildHtml() ?>
+        		</div>
+    		</div>
+    		<div class="span9">
+    			<div class="about-store span4">
+        			<p class="bugs">
+        				<?php 
+        					echo $this->__('Help Us to Keep Magento Healthy') ?>
+        					 - 
+        					<a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'">
+        						<strong>
+        							<?php echo $this->__('Report All Bugs') ?>
+        						</strong>
+        					</a>
+        					<?php echo $this->__('(ver. %s)', Mage::getVersion())
+        				?>
+        			</p>
+    			</div>
+				<div class="footermenu ">
+					
+				</div>
+    		</div>
+    	</section>
+    </div>
+</footer>
+<div class="copyright-outer">
+	<div class="container">
+		<section class="row-fluid">
+			<div class="copyright">
+	        	<address><?php echo $this->getCopyright() ?></address>			
+			</div>
+		</section>
+	</div>
+</div>

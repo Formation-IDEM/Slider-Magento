@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Idem_Products>
+      <version>0.1.0</version>
+    </Idem_Products>
+  </modules>
+  <global>
+    <blocks>
+      <products>
+        <class>Idem_Products_Block</class>
+      </products>
+    </blocks>
+    <helpers>
+      <products>
+        <class>Idem_Products_Helper</class>
+      </products>
+    </helpers>
+  </global>
+</config>
