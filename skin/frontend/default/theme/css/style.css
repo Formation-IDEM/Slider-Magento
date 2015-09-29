@@ -1,0 +1,178 @@
+/*
+ * HELPER
+ */
+
+a{
+	text-decoration: none;
+}
+
+
+/*
+ * DISPLAY
+ */
+
+.wrapper{
+	background: #edebec;
+}
+
+/*
+ * HEADER
+ */
+
+.header{
+	padding: 0;
+}
+
+.header-container {
+    border: none;
+    background: inherit;
+}
+
+.header .links li{
+	background: none;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.header .links li:last-of-type{
+	margin-right: 20px;
+}
+
+.header .links a{
+	color: #bfb5bf;
+	text-transform: uppercase;
+}
+
+.header .quick-access {
+    float: none;
+    width: inherit;
+    background: #5f525f;
+    padding: 0;
+}
+
+.header .quick-access .links{
+	margin: 0;
+}
+
+.header .logo{
+	float: left;
+}
+
+.header .cart{
+	float:right;
+}
+
+.header form{
+	float:right;	
+    margin-top: 50px;
+}
+
+.header .form-search {
+    position: inherit;
+    background:none;
+}
+
+.header .form-search input.input-text{	
+	border: none;
+	padding: 8px;
+	margin-right: 0;
+}
+
+.header .form-search button.button{
+	background-color: white;
+    padding: 5px;
+}
+
+.header .form-search button.button span{
+	background: none;
+	border: none;
+	color: #5f525f;
+	font-size: 20px;
+}
+
+.header .cart{
+	background: white;
+    padding-right: 80px;
+    margin-top: 50px;
+}
+
+.header .cart .fa-shopping-cart{
+	font-size: 20px;
+    padding: 5px;
+    background: #829b2f;
+    color: white;
+    margin-right: 10px;
+}
+
+/*
+ * NAVIGATION
+ */
+
+.nav-container {
+    background: none;
+    width: 930px;
+    margin: auto;
+	background: #6d1f5b;
+}
+
+.nav-container #nav{	
+	width: inherit;
+	width: auto;
+	padding: 0 30px;
+}
+
+.nav-container li{
+	background: #6d1f5b;
+	font-size: 14px;
+	padding: 10px;
+	border-bottom: 5px #9a2967 solid;
+}
+
+.nav-container li+li{
+	border-left: 1px #8a4c7c solid;
+}
+
+.nav-container li span{
+	color: #ece9ec;
+}
+
+/*
+ * MAIN
+ */
+
+.main-container {
+	background: none;
+}
+
+.main{
+	background: none;
+	padding: 0;
+	width: 930px;
+	text-align: center;
+}
+
+.std .page-title{
+	display: none;
+}
+
+.col-main .page-title{
+	border: none;
+	margin-top: 20px;
+}
+
+.col-main .page-title h1{
+	font-size: 19px;
+	text-align: center;
+	font-family: arial;
+	color: #5f525f;
+}
+
+.block-cms{
+	display: inline-block;
+	width: 33%;
+}
+
+.block-cms img {
+    width: 90%;
+}

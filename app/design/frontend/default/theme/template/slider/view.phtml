@@ -1,0 +1,37 @@
+<ul class="bxslider">
+<?php
+    $products = Mage::getModel('slider/slider')->getCollection();    
+    foreach ($products as $product) {
+?>        
+         <li>
+<?php
+                if( $product->getProductId() != -1 ){
+?>
+                    <a href="<?php $my_product = Mage::getModel('catalog/product')->load($product->getProductId());$my_product_url = $my_product->getProductUrl();echo $my_product_url;?>"><img src="media/<?= $product->getImage() ?>" /></a>  
+<?php
+                }elseif( ($product->getProductId() == -1) && ($product->getUrl() != "") ){
+?>                    
+                    <a href="<?= $product->getUrl() ?>"><img src="media/<?= $product->getImage() ?>" /></a>
+<?php                  
+                }else{
+?>                    
+                    <img src="media/<?= $product->getImage() ?>" />               
+<?php                  
+                }
+?>           
+         </li>
+<?php        
+    }
+?>
+</ul>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bxslider/4.1.1/jquery.bxslider.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            <?= $this->initSlider() ?>
+        });
+    });
+</script>
