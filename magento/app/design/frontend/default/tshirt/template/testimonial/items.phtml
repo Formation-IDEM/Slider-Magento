@@ -1,0 +1,13 @@
+
+<?php
+
+	$a = $this->getItems();
+	
+	foreach($a as $items){
+?>
+	
+		<h2><?= $items->getTitre();  ?></h2>
+		<p><?= $items->getMessage(); ?></p>
+	
+
+<?php }

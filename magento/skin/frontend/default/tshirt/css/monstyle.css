@@ -1,0 +1,66 @@
+.header{
+	background-color: #333;
+}
+
+.header-container{
+	background: #333;
+} 
+
+.nav-container{
+	
+}
+
+#nav{
+	font-size:25px;
+}
+
+.nav-container{
+	background: #333;
+}
+
+#nav a{
+	color:#A1A1A1;
+}
+
+
+.promo img{
+	
+	display:inline-block;
+	width:290px;
+	
+	
+}
+
+.footer-container{
+	
+	background-color: #333;
+	
+}
+
+.featured{
+	
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.featured-title{
+	
+	background:#DD781E;
+	color:white;
+	
+}
+
+.top-link-items{
+	
+	padding-top:80px;
+	font-size:15px;
+	
+}
+
+
+#nav ul, #nav div{
+	
+	top:45px;
+	
+}

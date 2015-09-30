@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+	
+	<default>
+		
+		<reference name="top.links">
+			<block type="test/links" name="link_block" template="test/product.phtml">
+				<action method="addTestLink">
+					
+				</action>
+			</block>
+			<block type="test/links" name="link_block" template="test/product.phtml">
+				<action method="addItemLink">
+					
+				</action>
+			</block>
+		</reference>
+		
+		 <reference name="catalog.topnav">
+            <block type="core/template" name="top.search" template="catalogsearch/form.mini.phtml" />
+        </reference>
+		
+	</default>
+	
+	<test_index_index>
+		
+		<reference name="content">
+			<block type="test/products" name="test_block" template="test/product.phtml">
+    				<action method="setCategoryId">
+    					<id>9</id>
+    				</action>
+    		</block>
+    	</reference>	
+		
+	</test_index_index>	
+	
+	
+	
+	
+</layout>
+
+

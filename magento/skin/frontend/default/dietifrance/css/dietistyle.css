@@ -1,0 +1,108 @@
+.header{
+	
+	background-color:#5f525f;
+	
+}
+
+.header-container{
+	background: #5f525f;
+	border-top:0;
+} 
+
+
+.header .links a{
+	font-size:14px;
+	color:#edebec;
+	
+}
+
+.top{
+	
+	background:#edebec;
+	text-align:left;
+	padding:10px;
+	height:120px;
+	
+}
+
+.top-content{
+	
+	width:930px;
+	margin:0px auto;
+	
+}
+
+.nav-container{
+	
+	background:#6d1f5b;
+	padding:10px;
+	
+	
+}
+
+#nav a{
+	font-size:18px;
+	color:white;
+	
+}
+
+.form-search{
+	
+	padding-top:40px;
+	float:left; 
+	padding-left:200px;
+	
+}
+
+.block-cart{
+	
+	float:right;
+	margin:40px;
+	
+}
+
+.block-cart .block-title strong {
+    background-image: url('../images/picto-addcart.png');
+}
+
+.discover{
+	
+	display:inline-block;
+	width:30%;
+	text-align:right;
+
+}
+
+
+.after-list{
+	
+width:930px;
+position:relative;
+margin:0px auto;
+padding:10px;	
+	
+}
+
+
+.inpes{
+	
+	
+	float:left;
+	
+	
+}
+
+.silhouette{
+	
+
+	float:left;
+	
+	
+}
+
+
+.ban{
+	
+	display:inline-block;
+	
+}

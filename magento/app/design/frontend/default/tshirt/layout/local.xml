@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+			<reference name="head">
+				<action method="addCss">
+					<css>css/monstyle.css</css>		
+				</action>
+			</reference>
+	
+	
+			<reference name="header">
+      			<remove name="top.search" />
+    		</reference>
+    		
+    	<!-->	<reference name="content">
+    		
+    			<block type="cms/block" name="edito-block" before="-">
+    				<action method ="setBlockId">
+    					<block_id>edito</block_id>	
+    				</action>
+    			</block>
+    		</reference> 
+    	-->
+    		
+    	
+   <!--		<reference name="content">
+    			
+    			<block type="test/products" name="test_block" template="test/product.phtml" before="-">
+    				<action method="setCategoryId">
+    					<id>6</id>
+    				</action>
+    				<action method="showCommentaries">
+    					<id>7</id>
+    				</action>
+    			</block>
+    		</reference> -->	
+    		
+			
+	</default>
+	
+	<catalog_product_view>
+	
+		<reference name="content">
+			
+			<block type="cms/block" name="product-block" after="-">
+    				<action method ="setBlockId">
+    					<block_id>product_desc</block_id>	
+    				</action>
+    		</block>
+		
+		</reference>
+	
+	</catalog_product_view>
+	
+	
+	
+	
+	
+</layout>

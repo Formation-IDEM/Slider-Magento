@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+			<reference name="head">
+				<action method="addCss">
+					<css>css/dietistyle.css</css>		
+				</action>
+			</reference>
+			
+			
+    		
+    	<!--	<reference name="top.links">
+			<block type="head/links" name="link_block" template="test/product.html">
+				<action method="addGuideLink">
+			</block>
+			</reference>	-->
+			
+			
+			
+	</default>
+	
+	<cms_index_index translate="label">
+     <!-- agencement page accueil --> 
+     
+     
+        
+	
+	
+	<reference name="content">
+		
+				 <block type="slider/items" name="slider_items" template="slider/items.phtml" before="-"><action method="getConfig"></action></block>
+    		
+    			<block type="cms/block" name="decouvrir_block" after="slider_items">
+    				<action method ="setBlockId">
+    					<block_id>decouvrir</block_id>	
+    				</action>
+    			</block>
+    			
+    			<block type="core/template" name="after-list" template="accueil/images.phtml"></block>
+    			
+    			<block type="cms/block" name="regime" after="after-list">
+    				<action method ="setBlockId">
+    					<block_id>regime</block_id>	
+    				</action>
+    			</block>
+    			
+    			
+    </reference> 
+    
+
+    
+    </cms_index_index>
+</layout>			

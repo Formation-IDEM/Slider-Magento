@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <testimonial_tab translate="label">
+            <label>Cartes</label>
+            <sort_order>100</sort_order>
+        </testimonial_tab>
+    </tabs>
+    <sections>
+        <testimonial_section translate="label">
+            <label>Cartes</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>testimonial_tab</tab>
+            <groups>
+                <testimonial_group translate="label">
+                    <label>Config</label>
+                    <comment>Configurations des cartes</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <testimonial_field translate="commentaire du label">
+                            <label>numeros de cartes</label>
+                            <comment>mon texte d'aide </comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </testimonial_field>
+                    </fields>
+                </testimonial_group>
+            </groups>
+        </testimonial_section>
+    </sections>
+</config>

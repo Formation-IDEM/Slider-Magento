@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+
+	
+	<testimonial_form_index>
+		<reference name="content">
+			<block type="core/template" name="testimonial_form" template="testimonial/form.phtml"></block>
+		</reference>
+	</testimonial_form_index>
+	
+	<testimonial_index_index>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/1column.phtml</template>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="testimonial/items" name="testimonial_items" template="testimonial/items.phtml"></block>
+		</reference>
+	</testimonial_index_index>
+	
+
+	
+</layout>
