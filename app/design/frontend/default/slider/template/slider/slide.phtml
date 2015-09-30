@@ -1,0 +1,63 @@
+<?php
+$autoPlay = Mage::getStoreConfig('slider_section/slider_group/autoplay_field');
+$slideSpeed = Mage::getStoreConfig('slider_section/slider_group/vitesse_field');
+$paginationSpeed = Mage::getStoreConfig('slider_section/slider_group/time_field');
+
+$slides = $this->getSlides();
+?>
+
+<?php if( $slides ): ?>
+<div class="owl-carousel">
+    <?php $count = 1; ?>
+    <?php foreach($slides as $slide ): ?>
+    <div class="item" id="item_<?=$count; ?>">
+        <img src="<?= $slide->getData('image'); ?>" title="TITRE" alt="<?= $slide->getData('title'); ?>">
+        <div class="overlay" style="display:none;"></div>
+        <div class="ic_caption">
+            <h3><a href="<?= $slide->getData('url'); ?>"><?= $slide->getData('title'); ?></a></h3>
+        </div>
+    </div>
+        <?php $count++; ?>
+    <?php endforeach; ?>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        function random(owlSelector){
+            owlSelector.children().sort(function(){
+                return Math.round(Math.random()) - 0.5;
+            }).each(function(){
+                $(this).appendTo(owlSelector);
+            });
+        }
+
+        $(".owl-carousel").owlCarousel({
+            autoPlay : true,
+            navigation : true,
+            remindNav: true,
+            slideSpeed : <?php echo $slideSpeed; ?>,
+            paginationSpeed : <?php echo $paginationSpeed; ?>,
+            singleItem:true,
+            scrollPerPage: false,
+            transitionStyle : "fade",
+            autoHeight : false,
+            navigationText: [
+                "&laquo;",
+                "&raquo;"
+            ],
+            responsiveClass: true,
+            loop: true,
+            autoWidth: true,
+            beforeInit : function(elem){
+                random(elem);
+            }
+        });
+
+        <?php for( $i = 1; $i < $count; $i++ ): ?>
+        $("#id_<?= $i; ?>").capslide({caption_color : '#FFFFFF', caption_bgcolor : '#002296', overlay_bgcolor : '#002296', border : '', showcaption : true});
+        <?php endfor; ?>
+    });
+</script>
+
+<?php endif; ?>

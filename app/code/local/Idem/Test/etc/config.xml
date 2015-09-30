@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Module Idem/Test -->
+<config>
+    <modules>
+        <Idem_Test>
+            <version>0.1.0</version>
+        </Idem_Test>
+    </modules>
+    <frontend>
+        <routers>
+            <test>
+                <use>standard</use>
+                <args>
+                    <module>Idem_Test</module>
+                    <frontName>test</frontName>
+                </args>
+            </test>
+        </routers>
+        <layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <test>
+                <class>Idem_Test_Block</class>
+            </test>
+            <checkout>
+                <rewrite>
+                    <links>Idem_Test_Block_Links</links>
+                    <!-- Pour les fichiers se trouvant dans un sous répertoire
+                    ici par exemple Mage/Checkout/Block/Template/Links
+                    <template_links>Idem_Test_Block_Template</template_links>
+                    -->
+                </rewrite>
+            </checkout>
+            <page>
+                <rewrite>
+                    <html_topmenu>Idem_Test_Block_Topmenu</html_topmenu>
+                </rewrite>
+            </page>
+        </blocks>
+        <helpers>
+            <test>
+                <class>Idem_Test_Helper</class>
+            </test>
+        </helpers>
+    </global>
+</config>

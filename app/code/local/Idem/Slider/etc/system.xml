@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+
+<config>
+    <tabs>
+        <slider_tab translate="label">
+            <label>Sliders</label>
+            <sort_order>100</sort_order>
+        </slider_tab>
+    </tabs>
+    <sections>
+        <slider_section translate="label">
+            <label>Sliders</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>slider_tab</tab>
+            <groups>
+                <slider_group translate="label">
+                    <label>Configuration</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <autoplay_field translate="Lecture Automatique">
+                            <label>Défilement automatique</label>
+                            <comment>Le slide doit il défiler automatiquement ?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                        </autoplay_field>
+                        <time_field translate="Vitesse du slide">
+                            <label>Temps par Slide</label>
+                            <comment>Temps (en milisecondes) de la durée d'affichage du slide</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                            <sort_order>2</sort_order>
+                        </time_field>
+                        <vitesse_field translate="Vitesse de transition">
+                            <label>Vitesse de transition</label>
+                            <comment>Vitesse (en milisecondes) de défilement slide</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                            <sort_order>3</sort_order>
+                        </vitesse_field>
+                    </fields>
+                </slider_group>
+            </groups>
+        </slider_section>
+    </sections>
+</config>
