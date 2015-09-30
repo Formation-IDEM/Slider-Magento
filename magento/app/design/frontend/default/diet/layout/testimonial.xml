@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+	<default>
+		
+	</default>
+	<testimonial_index_index>
+		<reference name="content">
+			<block type="testimonial/testimonial" name="testimonial_block" template="testimonial/testimonial.phtml" />
+		</reference>
+	</testimonial_index_index>
+	<testimonial_form_index>
+		<reference name="content">
+			<block type="core/template" name="testimonial_form" template="testimonial/form.phtml" />
+		</reference>
+	</testimonial_form_index>
+</layout>

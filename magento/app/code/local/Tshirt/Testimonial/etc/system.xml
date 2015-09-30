@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <testimonial_tab translate="label">
+            <label>Testimonial</label>
+            <sort_order>100</sort_order>
+        </testimonial_tab>
+    </tabs>
+    <sections>
+        <testimonial_section translate="label">
+            <label>Testimonial</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>testimonial_tab</tab>
+            <groups>
+                <testimonial_group translate="label">
+                    <label>Config</label>
+                    <comment>Configurations des testimoniaux</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <testimonial_select translate="commentaire du label">
+                            <label>Approuver par default :</label>
+                            <comment>select no si new temo </comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <frontend_input>text</frontend_input>
+                        </testimonial_select>
+                    </fields>
+                </testimonial_group>
+            </groups>
+        </testimonial_section>
+    </sections>
+</config>

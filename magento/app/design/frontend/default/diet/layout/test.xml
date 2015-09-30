@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+	<default>
+		<!--<reference name="top.links">
+			<block type="test/links" name="test_links">
+				<action method="addCartLink"></action>
+			</block>
+	</reference>-->
+	</default>
+	<test_index_index>
+		<reference name="content">
+			<block type="test/products" name="test_block" after="-" template="test/products.phtml">
+				<action method="setId">
+					<id>4</id>
+				</action>
+			</block>
+		</reference>
+	</test_index_index>
+</layout>

@@ -1,0 +1,13 @@
+<ul class="bxslider">
+
+ 	<?php 
+ 		$slides = Mage::getModel('slider/slider')->getCollection();
+		foreach ($slides as $slide) 
+		{
+			?>
+				<li><a href="<?php echo $slide->getData('url'); ?>"><img src="<?php echo $this->getSkinURL(); ?>images/<?php echo $slide->getData('image'); ?>" /></a></li>
+			<?php
+		}
+	?>		
+
+</ul>

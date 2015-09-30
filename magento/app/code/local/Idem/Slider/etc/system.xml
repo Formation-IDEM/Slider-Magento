@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<slider_tab translate="label">
+			<label>Slider</label>
+			<sort_order>100</sort_order>
+		</slider_tab>
+	</tabs>
+	<sections>
+		<slider_section translate="label">
+			<label>Slider</label>
+			<sort_order>200</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<tab>slider_tab</tab>
+			<groups>
+				<slider_group translate="label">
+					<label>Config</label>
+					<comment>Configuration des sliders</comment>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<vitesse_select translate="commentaire du label">
+							<label>Vitesse de transition :</label>
+							<comment>Selection de la vitesse de transition entre les slides</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>slider/optionvitesse</source_model>
+							<frontend_input>text</frontend_input>
+						</vitesse_select>
+						<pause_select translate="commentaire du label">
+							<label>Temps par slide :</label>
+							<comment>Selection du temps pendant les slides</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>90</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>slider/optionpause</source_model>
+							<frontend_input>text</frontend_input>
+						</pause_select>
+					</fields>
+				</slider_group>
+			</groups>
+		</slider_section>
+	</sections>
+</config>

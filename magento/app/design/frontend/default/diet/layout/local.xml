@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+	<!-- Gestion page acceuil -->
+	<cms_index_index translate="label">
+        <reference name="content">
+		    <block type="page/html" name="slider" template="slider/slider.phtml" />
+
+		    <block type="cms/block" name="tier-1" >
+		    	<action method="setBlockId">
+					<block_id>tier-1</block_id>
+				</action>
+		    </block>
+		    <block type="cms/block" name="tier-2" >
+		    	<action method="setBlockId">
+					<block_id>tier-2</block_id>
+				</action>
+		    </block>
+		    <block type="cms/block" name="tier-3" >
+		    	<action method="setBlockId">
+					<block_id>tier-3</block_id>
+				</action>
+		    </block>
+		</reference>
+    </cms_index_index>
+
+	<default>
+		<reference name="head">
+			<action method="addCss">
+				<css>css/monstyle.css</css>
+			</action>
+		</reference>
+		<reference name="header">
+			<!-- Panier -->
+            <block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+                    <label>Shopping Cart Sidebar Extra Actions</label>
+                </block>
+            </block>
+        </reference>
+	</default>
+		<!--
+		<reference name="content">
+			<block type="test/products" name="test_block" after="-" template="test/products.phtml">
+				<action method="setId">
+					<id>4</id>
+				</action>
+			</block>
+		</reference>
+        <reference name="footer">
+            <block type="newsletter/subscribe" name="after.newsletter" before="-" template="newsletter/subscribe.phtml"/>
+        </reference>
+	</default>
+    <catalog_category_default>
+    	<reference name="content">
+			<block type="cms/block" name="edito_block" before="-">
+				<action method="setBlockId">
+					<block_id>edito</block_id>
+				</action>
+			</block>
+		</reference>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalog_category_default>
+	
+	<catalog_category_layered>
+    	<reference name="content">
+			<block type="cms/block" name="edito_block" before="-">
+				<action method="setBlockId">
+					<block_id>edito</block_id>
+				</action>
+			</block>
+		</reference>
+		<reference name="left">
+			<block type="cms/block" name="edito_block2" after="-">
+				<action method="setBlockId">
+					<block_id>edito_left</block_id>
+				</action>
+			</block>
+		</reference>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+	</catalog_category_layered>
+	
+	<catalog_product_view>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	</catalog_product_view>
+	 -->
+</layout>

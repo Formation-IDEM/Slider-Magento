@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+	<config>
+		<modules>
+			<Idem_Test>
+				<version>0.1.0</version>
+			</Idem_Test>
+		</modules>
+		<global>
+			<blocks>
+				<test><class>Idem_Test_Block</class></test>
+			</blocks>
+			<helpers>
+				<test><class>Idem_Test_Helper</class></test>
+			</helpers>
+		</global>
+	</config>
