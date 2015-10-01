@@ -1,0 +1,6 @@
+<?php
+    $products = $this->getProducts();
+    foreach ($products as $product) {
+?>
+    <p><?= $product->getName() ?></p>
+<?php }
