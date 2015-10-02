@@ -6,13 +6,13 @@
 	$categories = $this->getStoreCategories();
 	$i = 0;
 	?>
-	<ul class="nav nav-pills">
+	<ul class="nav nav-pills categories-tabs">
 		<?php
 			foreach($categories as $category)
 			{
 				$categories_tree[] = $category;
 				?>
-					<li role="presentation" <?= (($i == 0) ? 'class="active"' : '') ?>>
+					<li role="presentation" data-tab="<?= $i+1 ?>" <?= (($i == 0) ? 'class="active"' : '') ?>>
 						<a>
 							<?= $category->getName() ?>
 						</a>
@@ -28,10 +28,12 @@
 	</ul>
 	<div class="tabs">
 		<?php
+			$c = 0;
 			foreach($categories_tree as $category)
 			{
+				$c++;
 				?>
-					<div class="tab">
+					<div class="tab tab-<?= $c ?>" <?= $c > 1 ? 'style="display:none;"' : '' ?>>
 						<?php
 							$category = Mage::getModel('catalog/category')->load($category->getId());
 							$count = count($category->getProductCollection());
@@ -59,12 +61,14 @@
 <!-- 										<a href="<?= $product->getProductUrl() ;?>">
  -->										<img src="<?= $product->getImageUrl(); ?>">
 											<div class="name"><?= $product->getName(); ?></div>
-											<div class="price"><?= $product->getPrice(); ?> €</div>
+											<div class="price"><?= number_format($product->getPrice(), 2); ?> €</div>
 											<div class="add-to-cart">
-												<span><i class="fa fa-heart"></i></span>
+												<span><a href="<?= $this->helper('wishlist')->getAddUrl($product) ?>"><i class="fa fa-heart"></i></a></span>
 												<span>
-													<span>Ajouter</span>
-													<i class="fa fa-shopping-cart"></i>
+													<a href="<?= $this->helper('checkout/cart')->getAddUrl($product) ?>">
+														<span>Ajouter</span>
+														<i class="fa fa-shopping-cart"></i>
+													</a>
 												</span>
 											</div>
 <!-- 										</a>
@@ -80,3 +84,13 @@
 		?>
 	</div>
 </div>
+<script>
+$(document).ready(function(){
+	$(document).on('click','.categories-tabs li', function(){
+		var tabRemove = $('.categories-tabs').find('.active').removeClass('active').attr('data-tab');
+		var tabAdd = $(this).addClass('active').attr('data-tab');
+		$('.tabs .tab-'+tabRemove).hide();
+		$('.tabs .tab-'+tabAdd).show();
+	});
+});
+</script>

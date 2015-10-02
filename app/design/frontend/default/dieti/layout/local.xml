@@ -1,7 +1,149 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
+	 <default>
+        <reference name="top.links">
+            <!-- Removes 'My Account' link  -->
+            <remove name="top.clnews.link" />
+            <action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+            <!-- Removes 'My Cart' AND 'Checkout' links -->
+            <remove name="checkout_cart_link" />
+            <!-- add My Account -->
+            <!-- default position 10 -->
+            <action method="addLink" translate="label title" module="customer">
+                <label>My Account</label>
+                <url helper="customer/getAccountUrl"/>
+                <title>My Account</title>
+                <prepare/>
+                <urlParams/>
+                <position>10</position>
+                <liParams>
+                    <class>top-account</class>
+                </liParams>
+                <aParams>
+                    <class>top-account-a</class>
+                </aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+            <!-- add My Wishlist -->
+            <!-- default position 20 -->
+            <reference name="wishlist_link">
+                <action method="setLiParams"><params>class="top-wishlist"</params></action>
+                <action method="setAParams"><params>class="top-wishlist-a"</params></action>
+            </reference>
+            <!-- add My Cart -->
+            <!-- default position 40 -->
+            <action method="addLink" translate="label title" module="customer">
+                <label>My Cart</label>
+                <url>/checkout/cart</url>
+                <title>My Cart</title>
+                <prepare/>
+                <urlParams/>
+                <position>40</position>
+                <liParams>
+                    <class>top-cart</class>
+                </liParams>
+                <aParams>
+                    <class>top-cart-a</class>
+                </aParams>
+                <beforeText/>
+                <afterText/>
+            </action>
+<!--             <block type="checkout/links" name="checkout_cart_link_custom">
+                <action method="addCartLink">
+                	<liParams>
+                    <class>top-account</class>
+                </liParams>
+                </action>
+            </block> -->
+            <!-- add Checkout -->
+            <!-- default position 50 -->
+            <action method="addLink" translate="label title">
+                <label>Checkout</label>
+                <url>/checkout</url>
+                <title>Checkout</title>
+                <prepare />
+                <urlParams/>
+                <position>50</position>
+                <liParams>
+                    <class>top-checkout</class>
+                </liParams>
+                <aParams>
+                    <class>top-checkout-a</class>
+                </aParams>
+                <beforeText />
+                <afterText />
+            </action>
+        </reference>
+    </default>
+    <customer_logged_out>
+        <!-- add Log In (when customer is not logged in) -->
+        <reference name="top.links">
+	    	<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+            <action method="addLink" translate="label title" module="customer">
+                <label>Log In</label>
+                <url helper="customer/getAccountUrl"/>
+                <title>Log In</title>
+                <prepare/>
+                <urlParams/>
+                <position>70</position>
+                <liParams>
+                    <class>top-log-in</class>
+                </liParams>
+                <aParams>
+                    <class>top-log-in-a</class>
+                </aParams>
+                <beforeText />
+                <afterText />                    
+            </action>
+        </reference>
+        <!-- add Register (when customer is not logged in) -->
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer">
+                <label>Register</label>
+                <url helper="customer/getRegisterUrl"/>
+                <title>Register</title>
+                <prepare/>
+                <urlParams/>
+                <position>60</position>
+                <liParams>
+                    <class>top-register</class>
+                </liParams>
+                <aParams>
+                    <class>top-register-a</class>
+                </aParams>
+                <beforeText />
+                <afterText />                    
+            </action>
+        </reference>            
+    </customer_logged_out>
+    <customer_logged_in>
+    	<action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+        <!-- add Log Out (when customer is logged in) -->
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer">
+                <label>Log Out</label>
+                <url helper="customer/getLogoutUrl"/>
+                <title>Log Out</title>
+                <prepare/>
+                <urlParams/>
+                <position>70</position>
+                <liParams>
+                    <class>top-log-out</class>
+                </liParams>
+                <aParams>
+                    <class>top-log-out-a</class>
+                </aParams>
+                <beforeText />
+                <afterText />
+            </action>
+        </reference>
+    </customer_logged_in>
 	<default>
 		<reference name="head">
+            <action method="addCss">
+                <stylesheet>css/custom.css</stylesheet>
+            </action>
 			<action method="addCss">
 				<stylesheet>css/bootstrap.min.css</stylesheet>
 			</action>
@@ -31,6 +173,21 @@
             </action>
         </reference>
 	</default>
+    <customer_account>
+        <reference name="head">
+            <action method="setRobots"><value>NOINDEX,NOFOLLOW</value></action>
+        </reference>
+    </customer_account>
+    <review_product_list>
+        <reference name="head">
+            <action method="setRobots"><value>NOINDEX,NOFOLLOW</value></action>
+        </reference>
+    </review_product_list>
+    <contacts_index_index>
+        <reference name="head">
+            <action method="setRobots"><value>NOINDEX,NOFOLLOW</value></action>
+        </reference>
+    </contacts_index_index>
 	<cms_index_index>
 		<reference name="head">
 			<action method="addCss">
@@ -44,9 +201,13 @@
 		<reference name="content">
 			<remove name="cms.wrapper" />
 			<block type="slider/slider" name="slider" template="slider/view.phtml" />
-			<block type="core/template" name="sub-content" template="custom/sub-content.phtml" />
-			<block type="catalog/navigation" name="focus-categories" template="custom/focus-categories.phtml" after="slider">
-			</block>
+            <block type="cms/block" name="custom_blocks" after="slider">
+                <action method="setBlockId">
+                    <block_id>custom</block_id>
+                </action>
+            </block>
+			<block type="catalog/navigation" name="focus-categories" template="custom/focus-categories.phtml" after="custom_blocks" />
+            <block type="core/template" name="sub-content" template="custom/sub-content.phtml" after="focus-categories" />
 			<block type="cms/block" name="regime_block" after="sub-content">
 				<action method="setBlockId">
 					<block_id>regime</block_id>
@@ -54,4 +215,22 @@
 			</block>
 		</reference>
 	</cms_index_index>
+    <CATEGORY_8>
+        <reference name="root">
+             <block type="cms/block" name="picture" after="-">
+                <action method="setBlockId">
+                    <block_id>picture</block_id>
+                </action>
+            </block>
+        </reference>
+    </CATEGORY_8>
+<!--     <catalog_category_view>
+        <reference name="left">
+            <block type="cms/block" name="seo" after="-">
+                <action method="setBlockId">
+                    <block_id>seo</block_id>
+                </action>
+            </block>
+        </reference>
+    </catalog_category_view> -->
 </layout>
